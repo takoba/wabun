@@ -1,0 +1,8 @@
+{
+  "name": "wabun",
+  "description": "",
+  "repository": "https://github.com/takoba/wabun",
+  "website": "https://github.com/takoba/wabun",
+  "keywords": ["node", "typescript"],
+  "env": {}
+}

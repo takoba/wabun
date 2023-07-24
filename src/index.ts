@@ -1,3 +1,1 @@
-;(() => {
-  console.info(`INFO: exec!`)
-})()
+export const serialize = () => {}

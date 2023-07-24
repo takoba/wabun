@@ -9,6 +9,7 @@
     "node": "18.x"
   },
   "scripts": {
+    "test": "vitest",
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },

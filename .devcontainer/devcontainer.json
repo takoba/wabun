@@ -1,0 +1,8 @@
+{
+  "name": "wabun-builder",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "builder",
+
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode"
+}

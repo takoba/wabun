@@ -1,8 +1,8 @@
 {
   "[typescript]": {
     "editor.codeActionsOnSave": {
-      "source.fixAll.prettier": false,
-      "source.fixAll.eslint": true
+      "source.fixAll.prettier": "never",
+      "source.fixAll.eslint": "explicit"
     }
   },
   "eslint.validate": ["typescript"],

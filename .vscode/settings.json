@@ -7,6 +7,8 @@
   },
   "eslint.validate": ["typescript"],
   "cSpell.words": [
-    "wabun",
+    "dakuten",
+    "handakuten",
+    "wabun"
   ]
 }

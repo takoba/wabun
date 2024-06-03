@@ -5,7 +5,7 @@ export const generateSerializeMethod = (
   dash: string,
   space: string,
 ): (kana: string) => string => {
-  const serializer = new Map(generateTable(dot, dash))
+  const serializer = new Map(generateTable(dot, dash, space))
 
   return (kana: string): string => {
     return kana.split('').map(c => serializer.get(c)).join(space) + space

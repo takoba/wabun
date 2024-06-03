@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { deserialize, serialize, translate } from '../src/index'
+import { deserialize, serialize, translate, wabun as Wabun } from '../src/index'
 
 const examples = [
   ['オハヨウ', '.-... -... -- ..- '],
@@ -41,5 +41,30 @@ describe('export const translate()', () => {
 
     // assert
     expect(actual).toEqual(kana)
+  })
+})
+
+
+describe('export const wabun()', () => {
+  const examples = [
+    [
+      'チキユウギキイテネ',
+      'カカヘカッヘカヘカカッヘカカヘヘッカカヘッヘカヘカカッカカッヘカヘカカッカヘッカヘカヘヘッヘヘカヘッ',
+    ],
+    [
+      'ミヤザキサンマイニチキイテルヨ',
+      'カカヘカヘッカヘヘッヘカヘカヘッカカッヘカヘカカッヘカヘカヘッカヘカヘカッヘカカヘッカヘッヘカヘカッカカヘカッヘカヘカカッカヘッカヘカヘヘッヘカヘヘカッヘヘッ',
+    ],
+  ]
+
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
+    // arrange
+    const { serialize } = Wabun({ characters: { dot: "カ", dash: "ヘ", space: "ッ" } })
+
+    // act
+    const actual = serialize(kana)
+
+    // assert
+    expect(actual).toEqual(wabun)
   })
 })

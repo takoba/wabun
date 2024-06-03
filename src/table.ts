@@ -1,4 +1,11 @@
-export const generateTable = (dot: string, dash: string): [string, string][] => {
+export const generateTable = (
+  dot: string,
+  dash: string,
+  space: string,
+): [string, string][] => {
+  const dakuten = `${dot}${dot}`
+  const handakuten = `${dot}${dot}${dash}${dash}${dot}`
+
   return [
     ['イ', `${dot}${dash}`],
     ['ロ', `${dot}${dash}${dot}${dash}`],
@@ -48,7 +55,35 @@ export const generateTable = (dot: string, dash: string): [string, string][] => 
     ['セ', `${dot}${dash}${dash}${dash}${dot}`],
     ['ス', `${dash}${dash}${dash}${dot}${dash}`],
     ['ン', `${dot}${dash}${dot}${dash}${dot}`],
-    ['゛', `${dot}${dot}`],
-    ['゜', `${dot}${dot}${dash}${dash}${dot}`],
+    ['゛', `${dakuten}`],
+    ['゜', `${handakuten}`],
+
+    ['ヴ', `${dot}${dot}${dash}${space}${dakuten}`],
+    ['ガ', `${dot}${dash}${dot}${dot}${space}${dakuten}`],
+    ['ギ', `${dash}${dot}${dash}${dot}${dot}${space}${dakuten}`],
+    ['グ', `${dot}${dot}${dot}${dash}${space}${dakuten}`],
+    ['ゲ', `${dash}${dot}${dash}${dash}${space}${dakuten}`],
+    ['ゴ', `${dash}${dash}${dash}${dash}${space}${dakuten}`],
+    ['ザ', `${dash}${dot}${dash}${dot}${dash}${space}${dakuten}`],
+    ['ジ', `${dash}${dash}${dot}${dash}${dot}${space}${dakuten}`],
+    ['ズ', `${dash}${dash}${dash}${dot}${dash}${space}${dakuten}`],
+    ['ゼ', `${dot}${dash}${dash}${dash}${dot}${space}${dakuten}`],
+    ['ゾ', `${dash}${dash}${dash}${dot}${space}${dakuten}`],
+    ['ダ', `${dash}${dot}${space}${dakuten}`],
+    ['ヂ', `${dot}${dot}${dash}${dot}${space}${dakuten}`],
+    ['ヅ', `${dot}${dash}${dash}${dot}${space}${dakuten}`],
+    ['デ', `${dot}${dash}${dot}${dash}${dash}${space}${dakuten}`],
+    ['ド', `${dot}${dot}${dash}${dot}${dot}${space}${dakuten}`],
+    ['バ', `${dash}${dot}${dot}${dot}${space}${dakuten}`],
+    ['ビ', `${dash}${dash}${dot}${dot}${dash}${space}${dakuten}`],
+    ['ブ', `${dash}${dash}${dot}${dot}${space}${dakuten}`],
+    ['ベ', `${dot}${space}${dakuten}`],
+    ['ボ', `${dash}${dot}${dot}${space}${dakuten}`],
+
+    ['パ', `${dash}${dot}${dot}${dot}${space}${handakuten}`],
+    ['ピ', `${dash}${dash}${dot}${dot}${dash}${space}${handakuten}`],
+    ['プ', `${dash}${dash}${dot}${dot}${space}${handakuten}`],
+    ['ペ', `${dot}${space}${handakuten}`],
+    ['ポ', `${dash}${dot}${dot}${space}${handakuten}`],
   ]
 }

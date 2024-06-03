@@ -80,4 +80,15 @@ describe('export const wabun()', () => {
       expect(actual).toEqual(wabun)
     },
   )
+
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
+    // arrange
+    const { deserialize } = Wabun({ characters: { dot: 'カ', dash: 'ヘ', space: 'ッ' } })
+
+    // act
+    const actual = deserialize(wabun)
+
+    // assert
+    expect(actual).toEqual(kana)
+  })
 })

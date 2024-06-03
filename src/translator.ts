@@ -17,6 +17,3 @@ export const generateTranslateMethod = (
     if (isWabunText(input)) return deserialize(input)
   }
 }
-
-// TODO: will remove (after optimize index.ts)
-export const translate = generateTranslateMethod('.', '-', ' ')

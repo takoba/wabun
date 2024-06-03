@@ -11,6 +11,3 @@ export const generateSerializeMethod = (
     return kana.split('').map(c => serializer.get(c)).join(space) + space
   }
 }
-
-// TODO: will remove (after optimize index.ts)
-export const serialize = generateSerializeMethod('.', '-', ' ')

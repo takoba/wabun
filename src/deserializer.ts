@@ -11,6 +11,3 @@ export const generateDeserializeMethod = (
     return wabun.split(space).map(c => deserializer.get(c)).join('')
   }
 }
-
-// TODO: will remove (after optimize index.ts)
-export const deserialize = generateDeserializeMethod('.', '-', ' ')

@@ -1,11 +1,11 @@
-{
-  "root": true,
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true
   },
-  "extends": [
+  extends: [
     "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/typescript",
@@ -13,16 +13,16 @@
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module"
   },
-  "plugins": [
+  plugins: [
     "import",
     "@typescript-eslint"
   ],
-  "rules": {
+  rules: {
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
@@ -46,5 +46,12 @@
       }
     ]
   },
-  "overrides": []
+  overrides: [],
+  settings: {
+    "import/resolver": {
+      node: {
+        extensions: [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
+      }
+    }
+  }
 }

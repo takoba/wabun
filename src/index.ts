@@ -1,9 +1,8 @@
-export const serialize = (kana) => {
-  if (kana == 'オハヨウ') return '.-... -... -- ..- '
-}
-export const deserialize = (wabun) => {
-  if (wabun == '.-... -... -- ..- ') return 'オハヨウ'
-}
+import { serialize } from "./serializer"
+import { deserialize } from "./deserializer"
+
+export { serialize, deserialize }
+
 export const translate = (input) => {
   switch (input) {
     case 'オハヨウ':

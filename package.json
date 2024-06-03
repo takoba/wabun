@@ -6,7 +6,7 @@
   "author": "takoba <plane25@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "18.x"
+    "node": "22.x"
   },
   "scripts": {
     "test": "vitest",
@@ -14,9 +14,9 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/node": "^18.17.0",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@typescript-eslint/parser": "^6.2.0",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.25",
+    "@typescript-eslint/parser": "^8.0.0-alpha.25",
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",

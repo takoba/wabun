@@ -25,8 +25,21 @@ type Wabun = {
   deserialize: (wabun: string) => string
   translate: (input: string) => string | void
 }
-export const wabun = (config: Config): Wabun => {
-  const c = Object.assign(defaults, config)
+
+type Arguments = [config: Config] | [dot: string, dash: string, space: string]
+const isConfig = (arg: any): arg is Config =>
+  arg instanceof Object
+  && (
+    Object.keys(arg).length === 0
+    || Object.keys(arg).some((key: string) => Object.keys(defaults).includes(key))
+  )
+export const wabun = (...args: Arguments): Wabun => {
+  const c = Object.assign(
+    defaults,
+    isConfig(args[0])
+      ? args[0]
+      : { characters: { dot: args[0], dash: args[1], space: args[2] } }
+  )
   const { dot, dash, space } = c.characters
 
   return {

@@ -67,4 +67,15 @@ describe('export const wabun()', () => {
     // assert
     expect(actual).toEqual(wabun)
   })
+
+  it.each(examples)('return "%s" when passed "%s" (called `wabun()` with other pattern variables)', (kana, wabun) => {
+    // arrange
+    const { serialize } = Wabun("カ", "ヘ", "ッ")
+
+    // act
+    const actual = serialize(kana)
+
+    // assert
+    expect(actual).toEqual(wabun)
+  })
 })

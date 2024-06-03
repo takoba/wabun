@@ -1,51 +1,45 @@
 import { describe, expect, it } from 'vitest'
-import { deserialize, serialize } from '../src/index'
+import { deserialize, serialize, translate } from '../src/index'
+
+const examples = [
+  ['オハヨウ', '.-... -... -- ..- '],
+  ['オヤスミ', '.-... .-- ---.- ..-.- '],
+  ['ナラ', '.-. ... '],
+]
 
 describe('export const serialize()', () => {
-  it('return wabun when passed kana', () => {
-    // arrange
-    const kana = 'オハヨウ'
-
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
     // act
-    const wabun = serialize(kana)
+    const actual = serialize(kana)
 
     // assert
-    expect(wabun).toEqual('.-... -... -- ..- ')
+    expect(actual).toEqual(wabun)
   })
 })
 
 describe('export const deserialize()', () => {
-  it('return kana when passed wabun', () => {
-    // arrange
-    const wabun = '.-... -... -- ..- '
-
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
     // act
-    const kana = deserialize(wabun)
+    const actual = deserialize(wabun)
 
     // assert
-    expect(kana).toEqual('オハヨウ')
+    expect(actual).toEqual(kana)
   })
 })
 
 describe('export const translate()', () => {
-  it('return wabun when passed kana', () => {
-    // arrange
-    const kana = 'オハヨウ'
-
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
     // act
-    const wabun = serialize(kana)
+    const actual = translate(kana)
 
     // assert
-    expect(wabun).toEqual('.-... -... -- ..- ')
+    expect(actual).toEqual(wabun)
   })
-  it('return kana when passed wabun', () => {
-    // arrange
-    const wabun = '.-... -... -- ..- '
-
+  it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
     // act
-    const kana = deserialize(wabun)
+    const actual = translate(wabun)
 
     // assert
-    expect(kana).toEqual('オハヨウ')
+    expect(actual).toEqual(kana)
   })
 })

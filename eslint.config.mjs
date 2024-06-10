@@ -4,7 +4,6 @@ import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
 import typescriptESLint from '@typescript-eslint/eslint-plugin'
 import typescriptESLintParser from '@typescript-eslint/parser'
-import importPlugin from 'eslint-plugin-import'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import globals from 'globals'
 
@@ -25,21 +24,23 @@ export default [
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
   ),
+  ...compat.plugins('import'),
   {
     files: ['eslint.config.mjs', 'src/**/*.{ts,tsx}', 'test/**/*.ts'],
 
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
       },
       parser: typescriptESLintParser,
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
     },
     plugins: {
-      ...compat.plugins('import'),
-      '@typescript-eslint': typescriptESLint,
+      typescriptESLint,
     },
     rules: {
       '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -48,6 +49,7 @@ export default [
       '@typescript-eslint/no-unused-vars': 'error',
       'no-unused-vars': 'off',
       'sort-imports': 'off',
+      'import/no-unresolved': 'error',
       'import/order': [
         'error',
         {
@@ -58,9 +60,8 @@ export default [
       ],
     },
     settings: {
-      ...importPlugin.configs.typescript.settings,
       'import/resolver': {
-        typescript: [],
+        typescript: {},
       },
     },
   },

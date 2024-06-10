@@ -52,14 +52,6 @@ export default [
           },
         },
       ],
-      'prettier/prettier': [
-        'error',
-        {
-          printWidth: 120,
-          semi: false,
-          singleQuote: true,
-        },
-      ],
     },
     settings: {
       ...importPlugin.configs.typescript.settings,

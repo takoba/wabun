@@ -20,7 +20,11 @@ const compat = new FlatCompat({
 export default [
   js.configs.recommended,
   eslintPluginPrettierRecommended,
-  ...compat.extends('plugin:import/errors', 'plugin:import/typescript', 'plugin:@typescript-eslint/recommended'),
+  ...compat.extends(
+    'plugin:import/errors',
+    'plugin:import/typescript',
+    'plugin:@typescript-eslint/recommended',
+  ),
   {
     files: ['eslint.config.mjs', 'src/**/*.{ts,tsx}', 'test/**/*.ts'],
 

@@ -44,7 +44,6 @@ describe('export const translate()', () => {
   })
 })
 
-
 describe('export const wabun()', () => {
   const examples = [
     [
@@ -59,7 +58,7 @@ describe('export const wabun()', () => {
 
   it.each(examples)('return "%s" when passed "%s"', (kana, wabun) => {
     // arrange
-    const { serialize } = Wabun({ characters: { dot: "カ", dash: "ヘ", space: "ッ" } })
+    const { serialize } = Wabun({ characters: { dot: 'カ', dash: 'ヘ', space: 'ッ' } })
 
     // act
     const actual = serialize(kana)
@@ -68,14 +67,17 @@ describe('export const wabun()', () => {
     expect(actual).toEqual(wabun)
   })
 
-  it.each(examples)('return "%s" when passed "%s" (called `wabun()` with other pattern variables)', (kana, wabun) => {
-    // arrange
-    const { serialize } = Wabun("カ", "ヘ", "ッ")
+  it.each(examples)(
+    'return "%s" when passed "%s" (called `wabun()` with other pattern variables)',
+    (kana, wabun) => {
+      // arrange
+      const { serialize } = Wabun('カ', 'ヘ', 'ッ')
 
-    // act
-    const actual = serialize(kana)
+      // act
+      const actual = serialize(kana)
 
-    // assert
-    expect(actual).toEqual(wabun)
-  })
+      // assert
+      expect(actual).toEqual(wabun)
+    },
+  )
 })

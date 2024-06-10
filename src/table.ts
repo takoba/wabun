@@ -1,8 +1,4 @@
-export const generateTable = (
-  dot: string,
-  dash: string,
-  space: string,
-): [string, string][] => {
+export const generateTable = (dot: string, dash: string, space: string): [string, string][] => {
   const dakuten = `${dot}${dot}`
   const handakuten = `${dot}${dot}${dash}${dash}${dot}`
 

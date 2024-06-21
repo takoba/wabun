@@ -16,6 +16,7 @@ const compat = new FlatCompat({
   resolvePluginsRelativeTo: __dirname,
 })
 
+/** @type {import("eslint").Linter.FlatConfig[]} */
 export default [
   js.configs.recommended,
   eslintPluginPrettierRecommended,
@@ -26,13 +27,7 @@ export default [
   ),
   ...compat.plugins('import'),
   {
-    files: ['eslint.config.mjs', 'src/**/*.{ts,tsx}', 'test/**/*.ts'],
-
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
       parser: typescriptESLintParser,
       parserOptions: {
         ecmaVersion: 'latest',
@@ -62,6 +57,34 @@ export default [
     settings: {
       'import/resolver': {
         typescript: {},
+      },
+    },
+  },
+  {
+    files: ['src/**/*.{ts,tsx}'],
+
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
+    },
+  },
+  {
+    files: ['test/**/*.ts', 'vitest.config.mts'],
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
+  },
+  {
+    files: ['eslint.config.mjs'],
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
       },
     },
   },

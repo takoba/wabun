@@ -9,7 +9,7 @@
       "other": "on",
       "comments": "off",
       "strings": "off"
-    }
+    },
   },
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
@@ -22,6 +22,7 @@
     "typescript"
   ],
   "eslint.experimental.useFlatConfig": true,
+  "jest.runMode": "on-demand",
   "cSpell.words": [
     "dakuten",
     "handakuten",

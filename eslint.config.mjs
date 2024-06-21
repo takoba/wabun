@@ -71,11 +71,12 @@ export default [
     },
   },
   {
-    files: ['test/**/*.ts', 'vitest.config.mts'],
+    files: ['test/**/*.ts', 'jest.config.ts'],
 
     languageOptions: {
       globals: {
         ...globals.node,
+        ...globals.jest,
       },
     },
   },

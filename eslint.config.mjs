@@ -4,8 +4,9 @@ import { FlatCompat } from '@eslint/eslintrc'
 import js from '@eslint/js'
 import typescriptESLint from '@typescript-eslint/eslint-plugin'
 import typescriptESLintParser from '@typescript-eslint/parser'
-import jestPlugin from 'eslint-plugin-jest'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import vitestPlugin from 'eslint-plugin-vitest'
+import vitestGlobals from 'eslint-plugin-vitest-globals'
 import globals from 'globals'
 
 // @see https://github.com/eslint/eslintrc?tab=readme-ov-file#usage-esm
@@ -72,18 +73,19 @@ export default [
     },
   },
   {
-    files: ['test/**/*.ts', 'jest.config.ts'],
+    files: ['test/**/*.ts', 'vitest.config.mts'],
 
-    ...jestPlugin.configs['flat/recommended'],
-
+    plugins: {
+      ...vitestPlugin.configs.recommended.plugins,
+    },
     languageOptions: {
       globals: {
         ...globals.node,
-        ...globals.jest,
+        ...vitestGlobals.environments.env.globals,
       },
     },
     rules: {
-      ...jestPlugin.configs['flat/recommended'].rules,
+      ...vitestPlugin.rules.recommended,
     },
   },
   {

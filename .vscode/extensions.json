@@ -1,7 +1,7 @@
 {
   "recommendations": [
     "ms-vscode.vscode-typescript-next",
-    "orta.vscode-jest",
+    "vitest.explorer",
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"

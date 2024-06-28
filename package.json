@@ -9,7 +9,7 @@
     "node": "22.x"
   },
   "scripts": {
-    "test": "jest",
+    "test": "vitest",
     "build": "tsc",
     "typecheck": "tsc --noEmit"
   },

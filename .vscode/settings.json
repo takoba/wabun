@@ -22,7 +22,6 @@
     "typescript"
   ],
   "eslint.experimental.useFlatConfig": true,
-  "jest.runMode": "on-demand",
   "cSpell.words": [
     "dakuten",
     "handakuten",

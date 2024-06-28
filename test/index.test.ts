@@ -1,4 +1,4 @@
-import { describe, expect, it } from '@jest/globals'
+import { describe, expect, it } from 'vitest'
 import { deserialize, serialize, translate, wabun as Wabun } from '../src/index'
 
 const examples = [
